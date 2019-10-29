@@ -1,0 +1,29 @@
+{
+  "name": "brain-games_evoly",
+  "version": "0.1.0",
+  "description": "brain-games project for hexlet",
+  "main": "dist/index.js",
+  "bin": {
+   "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evoly/frontend-project-lvl1.git"
+  },
+  "author": "Svetlana Semenko",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.5.4"
+  }
+}
