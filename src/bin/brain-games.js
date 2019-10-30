@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import sayHello from '..';
+/*eslint-disable */
+import sayHello from '..'; // QUESTION: ?
+/* eslint-enable */
 
 console.log('Welcome to the Brain Games!');
 sayHello();
