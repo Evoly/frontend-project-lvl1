@@ -2,9 +2,13 @@
 import readlineSync from 'readline-sync';
 // const readlineSync = require('readline-sync');
 
-const sayHello = () => {
-  const actual = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${actual}!`);
+export const sayHello = () => {
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${name}!`);
+  return name;
 };
 
-export default sayHello;
+export const getAnswer = () => {
+  const answer = readlineSync.question('Your answer: ');
+  return answer;
+};
