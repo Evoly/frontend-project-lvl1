@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /*eslint-disable */
 import * as common from '..'; // QUESTION: from '..'  ; import path?
 /* eslint-enable */
@@ -21,7 +20,7 @@ const calc = (a, b, operator) => {
   return result;
 };
 
-const game = (n, name) => {
+const game = (n) => {
   if (n < 1) {
     common.endGame();
     return;
