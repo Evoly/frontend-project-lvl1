@@ -11,3 +11,4 @@
   https://asciinema.org/a/N22VxnGEcdRoPcz8FzUI12UN5
 1. brain-gcd
   https://asciinema.org/a/Nzw2jsqauKsII5il4twXOCapw
+1. brain-progression
