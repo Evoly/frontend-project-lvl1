@@ -5,4 +5,7 @@
 [![Build Status](https://travis-ci.org/Evoly/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Evoly/frontend-project-lvl1)
 
 ## Setup
-https://asciinema.org/a/3yO1sGM4GZSvR4Ns5kzbupg6M
+1. brain-even
+  https://asciinema.org/a/3yO1sGM4GZSvR4Ns5kzbupg6M
+1. brain-calc
+  https://asciinema.org/a/N22VxnGEcdRoPcz8FzUI12UN5
