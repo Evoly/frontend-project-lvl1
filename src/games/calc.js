@@ -20,7 +20,7 @@ const calc = (a, b, operator) => {
   return result;
 };
 
-const game = (n) => {
+const game = (n, name) => {
   if (n < 1) {
     common.endGame();
     return;
