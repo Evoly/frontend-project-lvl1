@@ -12,3 +12,4 @@
 1. brain-gcd
   https://asciinema.org/a/Nzw2jsqauKsII5il4twXOCapw
 1. brain-progression
+  https://asciinema.org/a/3aopq5rfWTI6NYC4DXXA7DCzV

@@ -2,7 +2,7 @@ import * as common from '..';
 
 const getList = () => {
   const list = [common.getRandom()];
-  const step = Math.floor(Math.random() * 10);
+  const step = (Math.floor(Math.random() * 10) + 1);
   const hiddenIndex = Math.floor(Math.random() * 10);
   const listLength = 10;
   for (let i = 0; i < listLength - 1; i += 1) {
