@@ -9,3 +9,5 @@
   https://asciinema.org/a/3yO1sGM4GZSvR4Ns5kzbupg6M
 1. brain-calc
   https://asciinema.org/a/N22VxnGEcdRoPcz8FzUI12UN5
+1. brain-gcd
+  https://asciinema.org/a/Nzw2jsqauKsII5il4twXOCapw

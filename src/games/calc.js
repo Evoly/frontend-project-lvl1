@@ -1,6 +1,4 @@
-/*eslint-disable */
-import * as common from '..'; // QUESTION: from '..'  ; import path?
-/* eslint-enable */
+import * as common from '..';
 
 const calc = (a, b, operator) => {
   let result;

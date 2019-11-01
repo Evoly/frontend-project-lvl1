@@ -1,6 +1,4 @@
-/*eslint-disable */
-import * as common from '..'; // QUESTION: from '..' ?
-/* eslint-enable */
+import * as common from '..';
 
 const checkEven = (num) => {
   if (num % 2 !== 0) return false;
