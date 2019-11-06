@@ -33,4 +33,4 @@ export const wrongAnswer = (userAnswer, correctAnswer) => {
 
 export const numberOfTry = 3;
 
-export const getRandom = () => (Math.floor(Math.random() * 50) + 1);
+export const getRandom = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);

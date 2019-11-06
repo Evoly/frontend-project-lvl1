@@ -23,10 +23,10 @@ const game = (n, name) => {
     common.endGame();
     return;
   }
-  const numOne = common.getRandom();
-  const numTwo = common.getRandom();
+  const numOne = common.getRandom(1, 50);
+  const numTwo = common.getRandom(1, 50);
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
+  const randomOperator = operators[common.getRandom(0, operators.length - 1)];
   const question = `Question: ${numOne} ${randomOperator} ${numTwo}`;
   console.log(question);
   const answer = parseInt(common.getAnswer(), 10);

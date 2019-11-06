@@ -10,7 +10,7 @@ const game = (n) => {
     common.endGame();
     return;
   }
-  const num = common.getRandom();
+  const num = common.getRandom(1, 50);
   console.log(`Question: ${num}`);
   const answer = common.getAnswer();
   const even = isEven(num) ? 'yes' : 'no';

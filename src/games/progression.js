@@ -1,9 +1,9 @@
 import * as common from '..';
 
 const getList = () => {
-  const list = [common.getRandom()];
-  const step = (Math.floor(Math.random() * 10) + 1);
-  const hiddenIndex = Math.floor(Math.random() * 10);
+  const list = [common.getRandom(1, 50)];
+  const step = common.getRandom(1, 10);
+  const hiddenIndex = common.getRandom(0, 10);
   const listLength = 10;
   for (let i = 0; i < listLength - 1; i += 1) {
     list.push(list[i] + step);

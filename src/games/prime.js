@@ -12,7 +12,7 @@ const game = (n) => {
     common.endGame();
     return;
   }
-  const num = common.getRandom();
+  const num = common.getRandom(1, 50);
   console.log(`Question: ${num}`);
   const answer = common.getAnswer();
   const prime = isPrime(num) ? 'yes' : 'no';
@@ -28,7 +28,7 @@ const game = (n) => {
 };
 
 const startGame = () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".\n';
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
   common.sayHello(rules);
   game(common.numberOfTry);
 };
