@@ -1,34 +1,17 @@
-import * as common from '..';
+import { getRandom, engine } from '..';
+
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".\n';
 
 const isEven = (num) => {
   if (num % 2 !== 0) return false;
   return true;
 };
 
-const game = (n) => {
-  if (n < 1) {
-    common.endGame();
-    return;
-  }
-  const num = common.getRandom(1, 50);
-  console.log(`Question: ${num}`);
-  const answer = common.getAnswer();
-  const even = isEven(num) ? 'yes' : 'no';
-  const result = (answer === even) ? 1 : 0;
-  if (result < 1) {
-    common.wrongAnswer(answer, even);
-    return;
-  }
-  common.rightAnswer();
-  /*eslint-disable */
-  return game(n - 1); // QUESTION: linter ?
-  /* eslint-enable */
+const game = () => {
+  const questionNumber = getRandom(1, 50);
+  console.log(`Question: ${questionNumber}`);
+  const even = isEven(questionNumber) ? 'yes' : 'no';
+  return even;
 };
 
-const startGame = () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".\n';
-  common.sayHello(rules);
-  game(common.numberOfTry);
-};
-
-export default startGame;
+export default () => engine(rules, game);
