@@ -2,21 +2,21 @@ import { getRandom, engine } from '..';
 
 const rules = 'Find the greatest common divisor of given numbers.\n';
 
-const divisor = (a, b) => {
+const findDivisor = (a, b) => {
   if (a === b) return a;
   if (a === 0 || b === 0) return (a + b);
   const c = (a > b) ? b : a;
   const d = (a > b) ? (a % b) : (b % a);
-  return divisor(c, d);
+  return findDivisor(c, d);
 };
 
 const game = () => {
-  const questionNumberOne = getRandom(1, 50);
-  const questionNumberTwo = getRandom(1, 50);
-  const question = `Question: ${questionNumberOne} ${questionNumberTwo}`;
-  console.log(question);
-  const div = divisor(questionNumberOne, questionNumberTwo);
-  return div.toString();
+  const numberOne = getRandom(1, 50);
+  const numberTwo = getRandom(1, 50);
+  const roundQuestion = `Question: ${numberOne} ${numberTwo}`;
+  console.log(roundQuestion);
+  const rightAnswer = findDivisor(numberOne, numberTwo);
+  return rightAnswer.toString();
 };
 
 export default () => engine(rules, game);

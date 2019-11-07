@@ -18,10 +18,10 @@ const getList = () => {
 
 const game = () => {
   const getListResult = getList();
-  const question = `Question: ${getListResult[0]}`;
-  console.log(question);
-  const hiddenNumber = getListResult[1];
-  return hiddenNumber.toString();
+  const roundQuestion = `Question: ${getListResult[0]}`;
+  console.log(roundQuestion);
+  const rightAnswer = getListResult[1];
+  return rightAnswer.toString();
 };
 
 export default () => engine(rules, game);

@@ -10,10 +10,10 @@ const isPrime = (num) => {
 };
 
 const game = () => {
-  const num = getRandom(1, 50);
-  console.log(`Question: ${num}`);
-  const prime = isPrime(num) ? 'yes' : 'no';
-  return prime;
+  const number = getRandom(1, 50);
+  console.log(`Question: ${number}`);
+  const rightAnswer = isPrime(number) ? 'yes' : 'no';
+  return rightAnswer;
 };
 
 export default () => engine(rules, game);

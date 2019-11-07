@@ -38,7 +38,7 @@ export const engine = (rules, game) => {
       iter(n - 1);
     }
   };
-  iter(numberOfTry);
+  return iter(numberOfTry);
 };
 
 export const getRandom = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);

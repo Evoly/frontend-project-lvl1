@@ -21,13 +21,13 @@ const calc = (a, b, operator) => {
 };
 
 const game = () => {
-  const numOne = getRandom(1, 50);
-  const numTwo = getRandom(1, 50);
+  const numberOne = getRandom(1, 50);
+  const numberTwo = getRandom(1, 50);
   const operators = ['+', '-', '*'];
   const randomOperator = operators[getRandom(0, operators.length - 1)];
-  const question = `Question: ${numOne} ${randomOperator} ${numTwo}`;
-  console.log(question);
-  const rightAnswer = calc(numOne, numTwo, randomOperator);
+  const roundQuestion = `Question: ${numberOne} ${randomOperator} ${numberTwo}`;
+  console.log(roundQuestion);
+  const rightAnswer = calc(numberOne, numberTwo, randomOperator);
   return rightAnswer.toString();
 };
 

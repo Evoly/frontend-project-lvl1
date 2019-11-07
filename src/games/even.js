@@ -8,10 +8,10 @@ const isEven = (num) => {
 };
 
 const game = () => {
-  const questionNumber = getRandom(1, 50);
-  console.log(`Question: ${questionNumber}`);
-  const even = isEven(questionNumber) ? 'yes' : 'no';
-  return even;
+  const number = getRandom(1, 50);
+  console.log(`Question: ${number}`);
+  const rightAnswer = isEven(number) ? 'yes' : 'no';
+  return rightAnswer;
 };
 
 export default () => engine(rules, game);
