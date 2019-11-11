@@ -36,9 +36,9 @@ export const engine = (rules, game) => {
       return;
     }
     const gameResult = game();
+    console.log('gameResult0', gameResult[0], 'gameResult1', gameResult[1]);
     console.log(`Question: ${gameResult[0]}`);
     const correctAnswer = gameResult[1];
-
     const answer = checkAnswer(correctAnswer, name);
 
     if (answer) {
