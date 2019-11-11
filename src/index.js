@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
 
-let name = '';
+
 const numberOfTry = 3;
 
-export const sayHello = (rules) => {
-  console.log('\nWelcome to the Brain Games!');
-  if (rules) {
-    console.log(rules);
-  }
-  name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\n`);
-  return name;
-};
+// export const sayHello = (rules) => {
+//   console.log('\nWelcome to the Brain Games!');
+//   if (rules) {
+//     console.log(rules);
+//   }
+//   name = readlineSync.question('\nMay I have your name? ');
+//   console.log(`Hello, ${name}!\n`);
+//   return name;
+// };
 
-const checkAnswer = (correctAnswer) => {
+const checkAnswer = (correctAnswer, name) => {
   const userAnswer = readlineSync.question('Your answer: ');
   if (correctAnswer === userAnswer) {
     console.log('Correct!');
@@ -25,15 +25,22 @@ const checkAnswer = (correctAnswer) => {
 };
 
 export const engine = (rules, game) => {
-  sayHello(rules);
+  console.log('\nWelcome to the Brain Games!');
+  console.log(rules);
+  const name = readlineSync.question('\nMay I have your name? ');
+  console.log(`Hello, ${name}!\n`);
 
   const iter = (n) => {
     if (n < 1) {
       console.log(`Congratulations, ${name}!`);
       return;
     }
-    const correctAnswer = game();
-    const answer = checkAnswer(correctAnswer);
+    const gameResult = game();
+    console.log(`Question: ${gameResult[0]}`);
+    const correctAnswer = gameResult[1];
+
+    const answer = checkAnswer(correctAnswer, name);
+
     if (answer) {
       iter(n - 1);
     }

@@ -1,6 +1,6 @@
 import { getRandom, engine } from '..';
 
-const rules = 'What number is missing in the progression?\n';
+const rules = 'What number is missing in the progression?';
 
 const getList = () => {
   const list = [getRandom(1, 50)];
@@ -18,10 +18,9 @@ const getList = () => {
 
 const game = () => {
   const getListResult = getList();
-  const roundQuestion = `Question: ${getListResult[0]}`;
-  console.log(roundQuestion);
+  const roundQuestion = `${getListResult[0]}`;
   const rightAnswer = getListResult[1];
-  return rightAnswer.toString();
+  return [roundQuestion, rightAnswer.toString()];
 };
 
 export default () => engine(rules, game);

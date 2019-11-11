@@ -1,6 +1,7 @@
 import { getRandom, engine } from '..';
 
-const rules = 'What is the result of the expression?\n';
+const rules = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
 const calc = (a, b, operator) => {
   let result;
@@ -23,12 +24,10 @@ const calc = (a, b, operator) => {
 const game = () => {
   const numberOne = getRandom(1, 50);
   const numberTwo = getRandom(1, 50);
-  const operators = ['+', '-', '*'];
   const randomOperator = operators[getRandom(0, operators.length - 1)];
-  const roundQuestion = `Question: ${numberOne} ${randomOperator} ${numberTwo}`;
-  console.log(roundQuestion);
+  const roundQuestion = `${numberOne} ${randomOperator} ${numberTwo}`;
   const rightAnswer = calc(numberOne, numberTwo, randomOperator);
-  return rightAnswer.toString();
+  return [roundQuestion, rightAnswer.toString()];
 };
 
 export default () => engine(rules, game);

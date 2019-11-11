@@ -31,13 +31,13 @@
   "author": "Svetlana Semenko",
   "license": "ISC",
   "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.5.4",
     "@babel/node": "^7.6.3",
     "@babel/preset-env": "^7.5.4",
-    "readline-sync": "^1.4.10"
-  },
-  "devDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",

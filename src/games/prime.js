@@ -1,6 +1,6 @@
 import { getRandom, engine } from '..';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
@@ -10,10 +10,9 @@ const isPrime = (num) => {
 };
 
 const game = () => {
-  const number = getRandom(1, 50);
-  console.log(`Question: ${number}`);
-  const rightAnswer = isPrime(number) ? 'yes' : 'no';
-  return rightAnswer;
+  const roundQuestion = getRandom(40000, 500000);
+  const rightAnswer = isPrime(roundQuestion) ? 'yes' : 'no';
+  return [roundQuestion, rightAnswer];
 };
 
 export default () => engine(rules, game);

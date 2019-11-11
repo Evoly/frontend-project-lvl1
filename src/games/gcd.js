@@ -1,6 +1,6 @@
 import { getRandom, engine } from '..';
 
-const rules = 'Find the greatest common divisor of given numbers.\n';
+const rules = 'Find the greatest common divisor of given numbers.';
 
 const findDivisor = (a, b) => {
   if (a === b) return a;
@@ -13,10 +13,9 @@ const findDivisor = (a, b) => {
 const game = () => {
   const numberOne = getRandom(1, 50);
   const numberTwo = getRandom(1, 50);
-  const roundQuestion = `Question: ${numberOne} ${numberTwo}`;
-  console.log(roundQuestion);
+  const roundQuestion = `${numberOne} ${numberTwo}`;
   const rightAnswer = findDivisor(numberOne, numberTwo);
-  return rightAnswer.toString();
+  return [roundQuestion, rightAnswer.toString()];
 };
 
 export default () => engine(rules, game);
