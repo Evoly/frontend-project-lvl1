@@ -5,9 +5,7 @@ const rules = 'Find the greatest common divisor of given numbers.';
 const findDivisor = (a, b) => {
   if (a === b) return a;
   if (a === 0 || b === 0) return (a + b);
-  const c = (a > b) ? b : a;
-  const d = (a > b) ? (a % b) : (b % a);
-  return findDivisor(c, d);
+  return findDivisor(b, a % b);
 };
 
 const game = () => {
