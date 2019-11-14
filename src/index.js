@@ -1,33 +1,11 @@
 import readlineSync from 'readline-sync';
 
+const roundsCount = 3;
 
-const numberOfTry = 3;
-
-// export const sayHello = (rules) => {
-//   console.log('\nWelcome to the Brain Games!');
-//   if (rules) {
-//     console.log(rules);
-//   }
-//   name = readlineSync.question('\nMay I have your name? ');
-//   console.log(`Hello, ${name}!\n`);
-//   return name;
-// };
-
-const checkAnswer = (correctAnswer, name) => {
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (correctAnswer === userAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`${name} '${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${name}!`);
-  return false;
-};
-
-export const engine = (rules, game) => {
+export const makeGame = (gameDescription, generateRound) => {
   console.log('\nWelcome to the Brain Games!');
-  console.log(rules);
-  const name = readlineSync.question('\nMay I have your name? ');
+  console.log(gameDescription);
+  const name = readlineSync.question('\nMay I have your name? ', { defaultInput: 'Stranger' });
   console.log(`Hello, ${name}!\n`);
 
   const iter = (n) => {
@@ -35,17 +13,20 @@ export const engine = (rules, game) => {
       console.log(`Congratulations, ${name}!`);
       return;
     }
-    const gameResult = game();
-    //  console.log('gameResult0', gameResult[0], 'gameResult1', gameResult[1]);
-    console.log(`Question: ${gameResult[0]}`);
-    const correctAnswer = gameResult[1];
-    const answer = checkAnswer(correctAnswer, name);
+    const [roundQuestion, correctAnswer] = generateRound();
+    //  console.log('roundQuestion', roundQuestion, 'correctAnswer', correctAnswer);
+    console.log(`Question: ${roundQuestion}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (answer) {
+    if (correctAnswer === userAnswer) {
+      console.log('Correct!');
       iter(n - 1);
+    } else {
+      console.log(`${name} '${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
     }
   };
-  return iter(numberOfTry);
+  return iter(roundsCount);
 };
 
 export const getRandom = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);

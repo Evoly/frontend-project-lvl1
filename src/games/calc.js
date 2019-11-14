@@ -1,6 +1,6 @@
-import { getRandom, engine } from '..';
+import { getRandom, makeGame } from '..';
 
-const rules = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
 const calc = (a, b, operator) => {
@@ -16,18 +16,18 @@ const calc = (a, b, operator) => {
       result = a * b;
       break;
     default:
-      console.log('something went wrong');
+      return false;
   }
   return result;
 };
 
-const game = () => {
-  const numberOne = getRandom(1, 50);
-  const numberTwo = getRandom(1, 50);
+const generateRound = () => {
+  const operand1 = getRandom(1, 50);
+  const operand2 = getRandom(1, 50);
   const randomOperator = operators[getRandom(0, operators.length - 1)];
-  const roundQuestion = `${numberOne} ${randomOperator} ${numberTwo}`;
-  const rightAnswer = calc(numberOne, numberTwo, randomOperator);
+  const roundQuestion = `${operand1} ${randomOperator} ${operand2}`;
+  const rightAnswer = calc(operand1, operand2, randomOperator);
   return [roundQuestion, rightAnswer.toString()];
 };
 
-export default () => engine(rules, game);
+export default () => makeGame(gameDescription, generateRound);

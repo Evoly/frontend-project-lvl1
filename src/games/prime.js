@@ -1,6 +1,6 @@
-import { getRandom, engine } from '..';
+import { getRandom, makeGame } from '..';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num < 2) return false;
@@ -11,10 +11,10 @@ const isPrime = (num) => {
   return true;
 };
 
-const game = () => {
+const generateRound = () => {
   const roundQuestion = getRandom(1, 50);
   const rightAnswer = isPrime(roundQuestion) ? 'yes' : 'no';
   return [roundQuestion, rightAnswer];
 };
 
-export default () => engine(rules, game);
+export default () => makeGame(gameDescription, generateRound);
