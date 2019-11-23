@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const roundsCount = 3;
 
-export const makeGame = (gameDescription, generateRound) => {
+const makeGame = (gameDescription, generateRound) => {
   console.log('\nWelcome to the Brain Games!');
   console.log(gameDescription);
   const name = readlineSync.question('\nMay I have your name? ', { defaultInput: 'Stranger' });
@@ -14,7 +14,6 @@ export const makeGame = (gameDescription, generateRound) => {
       return;
     }
     const [roundQuestion, correctAnswer] = generateRound();
-    //  console.log('roundQuestion', roundQuestion, 'correctAnswer', correctAnswer);
     console.log(`Question: ${roundQuestion}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
@@ -29,4 +28,4 @@ export const makeGame = (gameDescription, generateRound) => {
   return iter(roundsCount);
 };
 
-export const getRandom = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);
+export default makeGame;

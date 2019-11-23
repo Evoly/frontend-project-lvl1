@@ -1,4 +1,6 @@
-import { getRandom, makeGame } from '..';
+import getRandom from '../utils';
+import makeGame from '..';
+
 
 const gameDescription = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];

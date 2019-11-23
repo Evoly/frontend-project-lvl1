@@ -1,14 +1,15 @@
-import { getRandom, makeGame } from '..';
+import getRandom from '../utils';
+import makeGame from '..';
 
 const gameDescription = 'What number is missing in the progression?';
 const progressionLength = 10;
-const start = getRandom(1, 50);
-const step = getRandom(1, 10);
 
 const makeProgression = () => {
-  const progression = [start];
-  for (let i = 0; i < progressionLength - 1; i += 1) {
-    progression.push(progression[i] + step);
+  const start = getRandom(1, 50);
+  const step = getRandom(1, 10);
+  const progression = [];
+  for (let i = 0; i <= progressionLength - 1; i += 1) {
+    progression.push(start + step * i);
   }
   return progression;
 };

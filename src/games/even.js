@@ -1,4 +1,5 @@
-import { getRandom, makeGame } from '..';
+import getRandom from '../utils';
+import makeGame from '..';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
