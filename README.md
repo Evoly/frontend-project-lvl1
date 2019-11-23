@@ -7,15 +7,15 @@
 ## Setup
   Brain-games - small set of console games
 
-  # Installation
+# Installation
 
-    Using npm:
+Using npm:
 
   ```sh
     $ npm i  -brain-games_evoly
   ```
 
-  # How to use
+# How to use
 
 1. brain-even
   https://asciinema.org/a/3yO1sGM4GZSvR4Ns5kzbupg6M
